@@ -1,0 +1,38 @@
+.button {
+    vertical-align: middle;
+    text-align: center;
+    width: fit-content;
+    background-color: sienna;
+    color: white;
+    padding: 1rem 4rem 1rem 4rem;
+    border-radius: .28rem;
+    margin-right: 0.5rem;
+}
+
+.button-dashboard {
+    vertical-align: middle;
+    text-align: center;
+    width: fit-content;
+    background-color: #4349D4;
+    color: white;
+    padding: .6rem 2.45rem .6rem 2.45rem;
+    border-radius: .28rem;
+    margin-top: 2.5rem;
+    margin-left: 0.75rem;
+}
+
+svg {
+    margin-right: 0.5rem;
+}
+
+.centerize {
+    background-color: white;
+    padding: 2rem;
+    margin: .5rem auto;
+    margin-left: 0;
+}
+
+p.links {
+    background-color: white;
+    margin-top: 0;
+}

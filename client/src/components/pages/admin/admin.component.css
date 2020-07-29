@@ -1,0 +1,36 @@
+p {
+    color: #333;
+    background-color: #EEE;
+}
+
+h2 {
+    text-align: left;
+}
+
+.primary {
+    margin: auto;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    background-color: #eee;
+}
+
+.nav {
+    margin: 0 auto;
+    margin-left: 0;
+    text-align: center;
+    width: 18%;
+    background-color: #EEE;
+}
+
+.main {
+    width: 80%;
+    float: inline-end;
+    padding-left: 2rem;
+}
+
+.border-box {
+    width: 70%;
+}
