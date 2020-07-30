@@ -7,4 +7,4 @@ create the hash+salt, it is stored in the database and never looked at by the se
 neither the client or server currently have a way to make a regular user into an admin. to make a user
 into an admin, manually change an existing user's user_type field from 0 to 1 in the database
 
-* [Demo](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
+[![Demo](https://github.com/chriscastaneda/rev-p2-internal-ticketing-system/blob/master/assests/img/demo_snip.PNG)](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
