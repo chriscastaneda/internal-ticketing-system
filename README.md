@@ -18,7 +18,7 @@ demo:
 - Filter by ticket category
 - Admin/Employee dashboard (ID'd on login)
 
-### Tech Stack:
+#### Tech Stack:
 - [x] PostGreSQL
 - [x] Node-Postgre (AWS-RDS)
 - [x] AWS-EC2
