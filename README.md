@@ -2,10 +2,10 @@
 Mock application of an internal-ticketing-system built to support a community of company employees and the IT personnel that can resolve their issues. Composed of posts and comments, this website allows employees to create inquiries in the form of a ticket that can be resolved by any of the aforementioned personnel
 
 **Subject:**
--login, signup
--client data storage
--Peer-to-peer interaction
--Agile scrum practices
+- login, signup
+- client data storage
+- Peer-to-peer interaction
+- Agile scrum practices
 
 **Tech Stack:**
 - [x] PostGreSQL
