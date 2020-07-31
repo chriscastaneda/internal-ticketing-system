@@ -35,13 +35,13 @@ demo:
 - [x] Git SCM (on GitHub)
 
 ## Init Instructions
-- install node 6.14.4 or higher
 
 ### Server - SpringBoot
 - Update Maven Project
 - Run springboot app: _Application.java_
 
 ### Client - React JS
+- install node 6.14.4 or higher
 - _client/_ npm install
 - npm start
 - Default accounts:
