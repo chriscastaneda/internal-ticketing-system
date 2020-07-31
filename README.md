@@ -38,7 +38,7 @@ demo:
 
 ### Server - SpringBoot
 - Update Maven Project
-- Run springboot app: _Application.java_
+- Run as springboot app: _Application.java_
 
 ### Client - React JS
 - install node 6.14.4 or higher
