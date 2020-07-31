@@ -37,15 +37,15 @@ demo:
 ## Init Instructions
 - install node 6.14.4 or higher
 
-**Server - SpringBoot**
+### Server - SpringBoot**
 - Update Maven Project
 - Run springboot app: Application.java
 
-**Client - React JS**
+### Client - React JS**
 - _client/_ npm install
 -npm start
 
-Default accounts:
+**Default accounts:**
 ```
 Employee:
 -username: employee
