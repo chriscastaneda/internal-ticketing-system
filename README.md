@@ -39,13 +39,12 @@ demo:
 
 ### Server - SpringBoot
 - Update Maven Project
-- Run springboot app: Application.java
+- Run springboot app: _Application.java_
 
 ### Client - React JS
 - _client/_ npm install
--npm start
-
-**Default accounts:**
+- npm start
+- Default accounts:
 ```
 Employee:
 -username: employee
