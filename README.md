@@ -51,7 +51,7 @@ Employee:
 -username: employee
 -password: 1234
 
-Admin: 
+Administrator: 
 -username: admin
 -password: 5678
 ```
