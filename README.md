@@ -44,7 +44,8 @@ demo:
 - install node 6.14.4 or higher
 - _client/_ npm install
 - npm start
-- Default accounts:
+
+### Default accounts:
 ```
 Employee:
 -username: employee
