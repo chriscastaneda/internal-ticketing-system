@@ -1,10 +1,57 @@
-# team-2-project
-Post/Ticket support forum
+# Ask IT
+Mock application of an internal-ticketing-system built to support a community of company employees and the IT personnel that can resolve their issues. Composed of posts and comments, this website allows employees to create inquiries in the form of a ticket that can be resolved by any of the aforementioned personnel
 
-the server only looks at hash and salt when trying to log in a user, once the password has been used to
-create the hash+salt, it is stored in the database and never looked at by the server again
+**Subject:**
+-login, signup
+-client data storage
+-Peer-to-peer interaction
+-Agile scrum practices
 
-neither the client or server currently have a way to make a regular user into an admin. to make a user
-into an admin, manually change an existing user's user_type field from 0 to 1 in the database
+**Tech Stack:**
+- [x] PostGreSQL
+- [x] Node-Postgre (AWS-RDS)
+- [x] AWS-EC2
+- [x] Java: Spring Boot
+- [x] Spring Data
+- [x] Spring Security + JWT
+- [x] Hibernate
+- [x] BCrypt
+- [x] JUnit
+- [x] TypeScript
+- [x] CSS Bootstrap
+- [x] React
+- [x] Jest/Enzyme
+- [x] Git SCM (on GitHub)
 
+demo:
 [![Demo](https://github.com/chriscastaneda/rev-p2-internal-ticketing-system/blob/master/assests/img/demo_snip.PNG)](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
+
+## Features
+- Documentation (all methods have basic documentation)
+- Server Unit testing (> 80% coverage)
+- Client Unit testing (> 30% coverage)
+- SQL Data Persistance (3 tables; all 3NF)
+- Filter by ticket category
+- Admin/Employee dashboard (ID'd on login)
+
+## Init Instructions
+- install node 6.14.4 or higher
+
+## Server - SpringBoot
+- Update Maven Project
+- Run springboot app: Application.java
+
+### Client - React JS
+- _client/_ npm install
+-npm start
+
+Default accounts:
+```
+Employee:
+-username: employee
+-password: 1234
+
+Admin: 
+-username: admin
+-password: 5678
+```
