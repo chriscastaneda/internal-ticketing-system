@@ -7,6 +7,17 @@ Mock application of an internal-ticketing-system built to support a community of
 - Peer-to-peer interaction
 - Agile scrum practices
 
+demo:
+[![Demo](https://github.com/chriscastaneda/rev-p2-internal-ticketing-system/blob/master/assests/img/demo_snip.PNG)](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
+
+## Features
+- Documentation (all methods have basic documentation)
+- Server Unit testing (> 80% coverage)
+- Client Unit testing (> 30% coverage)
+- SQL Data Persistance (3 tables; all 3NF)
+- Filter by ticket category
+- Admin/Employee dashboard (ID'd on login)
+
 **Tech Stack:**
 - [x] PostGreSQL
 - [x] Node-Postgre (AWS-RDS)
@@ -22,17 +33,6 @@ Mock application of an internal-ticketing-system built to support a community of
 - [x] React
 - [x] Jest/Enzyme
 - [x] Git SCM (on GitHub)
-
-demo:
-[![Demo](https://github.com/chriscastaneda/rev-p2-internal-ticketing-system/blob/master/assests/img/demo_snip.PNG)](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
-
-## Features
-- Documentation (all methods have basic documentation)
-- Server Unit testing (> 80% coverage)
-- Client Unit testing (> 30% coverage)
-- SQL Data Persistance (3 tables; all 3NF)
-- Filter by ticket category
-- Admin/Employee dashboard (ID'd on login)
 
 ## Init Instructions
 - install node 6.14.4 or higher
