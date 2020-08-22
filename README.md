@@ -19,14 +19,14 @@ demo:
 - Admin/Employee dashboard (ID'd on login)
 
 ### Tech Stack:
-- [x] PostGreSQL
+- [x] PostgreSQL
 - [x] Node-Postgre (AWS-RDS)
 - [x] AWS-EC2
 - [x] Java: Spring Boot
 - [x] Spring Data
 - [x] Spring Security + JWT
 - [x] Hibernate
-- [x] BCrypt
+- [x] Bcrypt
 - [x] JUnit
 - [x] TypeScript
 - [x] CSS Bootstrap
