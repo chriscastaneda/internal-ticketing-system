@@ -8,3 +8,4 @@ neither the client or server currently have a way to make a regular user into an
 into an admin, manually change an existing user's user_type field from 0 to 1 in the database
 
 * [Demo](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
+https://www.base64-image.de/
