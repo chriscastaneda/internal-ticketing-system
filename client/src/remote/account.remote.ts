@@ -6,13 +6,15 @@ import { Users } from '../models/Users';
 // Login:request token & user payload
 export const createUser = async (login: Authorize) => {
     const response = await internalAxios.post('/user', login); //Comeback to this
-    return response; //console.log(response);
+    return response; 
+    //console.log(response);
 }
 
 // Login:create token & request user payload
 export const createToken = async (login: Authenticate) => {
     const response = await internalAxios.post('/user/login', login); //Comeback to this
-    return response; //console.log(response);
+    console.log(response);
+    return response;
 }
 
 

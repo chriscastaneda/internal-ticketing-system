@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import * as accountRemote from '../../../remote/account.remote';
 import './login.component.css';
 import { useHistory } from 'react-router';
@@ -10,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
+import Background from '../../../background/gallery-6.png';
 
 
 
@@ -34,9 +34,19 @@ export const LoginComponent:React.FC = ()=>{
 
     const [validated, setValidated] = useState(false);
 
-    // useEffect(() => {
-    //     loadCredentails();
-    // }, []);
+    const [windowWidth, setWindowWidth ] = useState(window.innerWidth);
+
+    useEffect(() => {
+        // loadCredentails();
+        loginUser();
+        const handleWindowResize = () => {
+          setWindowWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', handleWindowResize);
+        return () => {            
+          window.removeEventListener('resize', handleWindowResize);  
+        }
+    }, []);
 
 
     /**Register User */
@@ -50,7 +60,7 @@ export const LoginComponent:React.FC = ()=>{
         };
 
         console.log(payload);
-        const response = await accountRemote.createUser(payload); //SEnd POST
+        const response = await accountRemote.createUser(payload); //Send POST
         setLoginUsertName(''); //clear fields
         setLoginPassword('');
 
@@ -64,19 +74,17 @@ export const LoginComponent:React.FC = ()=>{
             userName: inputLoginUsertName,
             userPassword: inputLoginPassword
         };
-     
-        if (localStorage.getItem('userRole') === 'Employee'){
-            history.push('/employee');
+
+         if (localStorage.getItem('userRole') === 'Employee'){
+          history.push('/employee'); //path in app.ts
         }else if(localStorage.getItem('userRole') === 'Admin'){
-            history.push('/administrator');
+            history.push('/administrator'); 
         }
 
-
+        console.log('Sending authentication request: ', payload);
         const response = await accountRemote.createToken(payload); //SEnd POST
+        console.log(response);
         
-        setLoginUsertName(''); //clear fields
-        setLoginPassword('');
-
         const userName = response.data.userName;
         const firstName = response.data.firstName;
         const lastName = response.data.lastName;
@@ -91,12 +99,14 @@ export const LoginComponent:React.FC = ()=>{
         localStorage.setItem('userImage', userImage);
         localStorage.setItem('accessToken', accessToken);
 
-        if (localStorage.getItem('userRole') === 'Employee'){
-            history.push('/employee');
-        }else if(localStorage.getItem('userRole') === 'Admin'){
-            history.push('/administrator');
-        }
+        // if (localStorage.getItem('userRole') === 'Employee'){
+        //   history.push('/employee'); //path in app.ts
+        // }else if(localStorage.getItem('userRole') === 'Admin'){
+        //     history.push('/administrator'); 
+        // }
 
+        setLoginUsertName(''); //clear fields
+        setLoginPassword('');
         // loadCredentails();
     };
 
@@ -131,28 +141,69 @@ export const LoginComponent:React.FC = ()=>{
 
     return(
         <div>
+            <div id="background" style={{backgroundImage: `url(${Background})` }}>
+            <div className="main-container">
 
+            {/* <section id="header-container">
+              <div id="logo-container"></div>
+              <label className="font-white"> Logo </label>
+            </section> */}
+            
+            <h1 className="font-white title-container h1">Welcome to Ask IT Intranet</h1>
+            
             {/* Main Login Page */}
-            <h1>Welcome to Posticket</h1>
-            <h2>Please login</h2>
-            <Form>
-            <Form.Group controlId="formUsername">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" placeholder="Username" name="text" value={inputLoginUsertName} onChange={e => setLoginUsertName(e.target.value)} />
-                <Form.Text className="text-muted">
-                </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" value={inputLoginPassword} onChange={e => setLoginPassword(e.target.value)}/>
-            </Form.Group>
-            </Form>
-            <Button variant="primary" type="submit" onClick={() => loginUser()}>Sign In</Button>
-            <h2>New User?</h2>
-            <Button variant="primary" type="submit" onClick={registerShow}>Sign Up</Button>
+            <section className="login-container">
+            
+                {/* Semantic-ui form*/}
+                <form className="ui form">
+                  <div className="field width-container">
+                    <input className="field-color" type="text" name="first-name" placeholder="Username"  value={inputLoginUsertName} onChange={e => setLoginUsertName(e.target.value)}/>
+                  </div>
+                  <div className="field width-container">
+                    <input className="field-color" type="password" name="last-name" placeholder="Password" value={inputLoginPassword} onChange={e => setLoginPassword(e.target.value)}/>
+                  </div>
+                  <div className="button-container">
+                    <button className="ui button width-container button-color" type="submit" onClick={() => loginUser()}>Login</button>
+                  </div>
+                  <div className="field center">
+                {/* <div className="ui checkbox">
+                  <input type="checkbox" className="hidden" /> */}
+                  
+                  
+                  <label className="text-align"> <a href="https://github.com/chriscastaneda/rev-p2-internal-ticketing-system#anchor" style={{color: "#878591"}} target="_blank">
+                    Forgot Password </a></label>
+                  <label className="text-align cursor" onClick={registerShow}> <span className="font-grey">Register</span></label>  
+                {/* </div> */}
+                
+                  </div>
+                  
+                </form>
+              </section>
 
-            {/* User Registration Modal */}
-            <Modal show={showRegister} onHide={registerClose}>
+              <section>
+                <footer className="footer font-white">Please advise the website will be down temporarly for maintenance, please revisit soon at a later time. thank you! </footer>
+            
+              </section> 
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             {/* User Registration Modal */}
+             <Modal show={showRegister} onHide={registerClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Register</Modal.Title>
                 </Modal.Header>
@@ -198,6 +249,7 @@ export const LoginComponent:React.FC = ()=>{
                     <Button variant="primary" type="submit" onClick={registerSubmit}>Register</Button>
                 </Modal.Footer>
             </Modal>
+          </div>
         </div>
     );
 };

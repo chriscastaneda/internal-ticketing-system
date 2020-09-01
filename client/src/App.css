@@ -1,10 +1,24 @@
 .App {
   text-align: center;
-  background-color: #eee;
-  margin-top: 3.8rem;
+  /* background-color: #eee;
+  margin-top: 3.8rem; */
+
+    /*React Bank*/
+  min-height: 100vh;
+
 }
 
-.App p {
+/*James*/
+/* .App p {
+  text-align: left;
+  padding-left: 15%;
+  padding-top: 2rem;
+  margin-top: 5rem;
+  min-height: 2rem;
+  margin-bottom: 0;
+} */
+
+.p {
   text-align: left;
   padding-left: 15%;
   padding-top: 2rem;
@@ -13,9 +27,9 @@
   margin-bottom: 0;
 }
 
-.App h1 {
+/* .App h1 {
   background-color: white;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -55,7 +69,3 @@
 .user-role {
   background-color: white;
 }
-
-/* div {
-  background-color: #CCC;
-} */

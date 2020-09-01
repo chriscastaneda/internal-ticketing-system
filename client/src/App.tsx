@@ -24,10 +24,13 @@ function App() {
           <main>
             <Suspense fallback={<div>Loading...</div>}> {/* lazy loading loadbar  */}
             <Route exact path="/">
+            {/* <AdminComponent /> */}
               <LoginComponent />
             </Route>
+            
             <Switch>
-                <div className='p'> 
+                {/* <div className='p'>  */}
+                <div id='p'>
               {/* <Route path="/template"> */}
               {/* { isEmployee ? (<TestComponent />) : (<Redirect to="/"/>)} Lazy load  */}
               {/* </Route> */}
@@ -35,6 +38,7 @@ function App() {
                 <AdminNavbarComponent />
                 { isAdmin ? (<AdminComponent />) : (<Redirect to="/"/>)}
               </Route>
+
               <Route path="/employee">
                 <EmployeeNavbarComponent />
                 { isEmployee ? (<EmployeeComponent />) : (<Redirect to="/"/>)}
