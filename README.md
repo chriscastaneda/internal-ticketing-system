@@ -49,7 +49,6 @@ demo:
 
 #### &#x128280; Default accounts
 
-#### Default accounts:
 ```
 Employee:
 -username: employee
