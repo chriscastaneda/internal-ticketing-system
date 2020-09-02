@@ -37,8 +37,6 @@ export const LoginComponent:React.FC = ()=>{
     const [windowWidth, setWindowWidth ] = useState(window.innerWidth);
 
     useEffect(() => {
-        // loadCredentails();
-        loginUser();
         const handleWindowResize = () => {
           setWindowWidth(window.innerWidth);
         }
@@ -48,6 +46,23 @@ export const LoginComponent:React.FC = ()=>{
         }
     }, []);
 
+
+    let response: any;
+    const setInformation = async () => {
+    
+    
+      setLoginUsertName(''); //clear fields
+      setLoginPassword('');
+
+    localStorage.setItem('userName', response.data.userName);
+    localStorage.setItem('firstName', response.data.firstName);
+    localStorage.setItem('lastName', response.data.lastName);
+    localStorage.setItem('userRole', response.data.userRole);
+    localStorage.setItem('userImage', response.data.userImage);
+    localStorage.setItem('accessToken', response.data.jwt);
+
+    history.push('/redirect'); //route path to app.ts
+  }
 
     /**Register User */
     const registerUser = async () => {
@@ -59,12 +74,9 @@ export const LoginComponent:React.FC = ()=>{
             userPassword: inputRegisterPassword
         };
 
-        console.log(payload);
-        const response = await accountRemote.createUser(payload); //Send POST
+        const response = await accountRemote.createUser(payload); //SEnd POST
         setLoginUsertName(''); //clear fields
         setLoginPassword('');
-
-        // loadCredentails();
     };
 
 
@@ -75,38 +87,13 @@ export const LoginComponent:React.FC = ()=>{
             userPassword: inputLoginPassword
         };
 
-         if (localStorage.getItem('userRole') === 'Employee'){
-          history.push('/employee'); //path in app.ts
-        }else if(localStorage.getItem('userRole') === 'Admin'){
-            history.push('/administrator'); 
+        try {
+          response = await accountRemote.createToken(payload); //SEnd POST
+          await setInformation();
+        } catch {
+          alert('Invalid username or password');
         }
-
-        console.log('Sending authentication request: ', payload);
-        const response = await accountRemote.createToken(payload); //SEnd POST
-        console.log(response);
         
-        const userName = response.data.userName;
-        const firstName = response.data.firstName;
-        const lastName = response.data.lastName;
-        const userRole = response.data.userRole;
-        const userImage = response.data.userImage;
-        const accessToken = response.data.jwt;
-
-        localStorage.setItem('userName', userName);
-        localStorage.setItem('firstName', firstName);
-        localStorage.setItem('lastName', lastName);
-        localStorage.setItem('userRole', userRole);
-        localStorage.setItem('userImage', userImage);
-        localStorage.setItem('accessToken', accessToken);
-
-        // if (localStorage.getItem('userRole') === 'Employee'){
-        //   history.push('/employee'); //path in app.ts
-        // }else if(localStorage.getItem('userRole') === 'Admin'){
-        //     history.push('/administrator'); 
-        // }
-
-        setLoginUsertName(''); //clear fields
-        setLoginPassword('');
         // loadCredentails();
     };
 
@@ -155,7 +142,7 @@ export const LoginComponent:React.FC = ()=>{
             <section className="login-container">
             
                 {/* Semantic-ui form*/}
-                <form className="ui form">
+                <div className="ui form">
                   <div className="field width-container">
                     <input className="field-color" type="text" name="first-name" placeholder="Username"  value={inputLoginUsertName} onChange={e => setLoginUsertName(e.target.value)}/>
                   </div>
@@ -177,11 +164,11 @@ export const LoginComponent:React.FC = ()=>{
                 
                   </div>
                   
-                </form>
+                </div>
               </section>
 
               <section>
-                <footer className="footer font-white">Please advise the website will be down temporarly for maintenance, please revisit soon at a later time. thank you! </footer>
+                <footer className="footer font-white">Please advise the website will be down temporarily for maintenance. Please check back in at a later time. thank you! </footer>
             
               </section> 
             </div>
