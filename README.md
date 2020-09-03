@@ -40,7 +40,7 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
 
 <div id="anchor">
 
-#### &#x128280; Default accounts
+####  Default accounts
 
 </div> 
 
