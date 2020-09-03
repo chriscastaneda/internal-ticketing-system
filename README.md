@@ -52,11 +52,11 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
 </div> 
 
 ```
-Employee:
--username: employee
--password: 1234
+- Employee:
+    username: employee
+    password: 1234
 
-Administrator: 
--username: admin
--password: 5678
+-Administrator: 
+    username: admin
+    password: 5678
 ```
