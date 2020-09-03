@@ -49,8 +49,8 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
     username: EmployeeUser
     password: 1234
 
-- Finance Manager:
-    username: ManagerUser
+-Administrator: 
+    username: AdminUser
     password: 5678
 ```
 
