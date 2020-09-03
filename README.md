@@ -1,4 +1,4 @@
-# Ask IT
+# Ask I.T.
 Mock application of an internal-ticketing-system built to support a community of company employees and the IT personnel that can resolve their issues. Composed of posts and comments, this website allows employees to create inquiries in the form of a ticket that can be resolved by any of the aforementioned personnel
 
 **Subject:**
@@ -34,7 +34,7 @@ Mock application of an internal-ticketing-system built to support a community of
 - [x] Jest/Enzyme
 - [x] Git SCM (on GitHub)
 
-## Login instructions
+## Login Instructions
 1. Refer to video above for website features. 
 2. Enter any default account options below to sign-in to live demo.
 
