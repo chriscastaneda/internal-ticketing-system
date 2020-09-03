@@ -34,6 +34,26 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
 - [x] Jest/Enzyme
 - [x] Git SCM (on GitHub)
 
+## User login instructions
+1. Refer to video above for website features. 
+2. Enter any default account options below to sign in to live demo.
+
+<div id="anchor">
+
+#### &#x128280; Default accounts
+
+</div> 
+
+```diff
+- Employee:
+    username: EmployeeUser
+    password: 1234
+
+- Finance Manager:
+    username: ManagerUser
+    password: 5678
+```
+
 ## Init Instructions
 
 ### Server - SpringBoot
@@ -44,19 +64,3 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
 - install node 6.14.4 or higher
 - _client/_ npm install
 - npm start
-
-## User Login
-<div id="anchor">
-
-#### &#x128280; Default accounts
-</div> 
-
-```diff
-- Employee:
-    username: employee
-    password: 1234
-
--Administrator: 
-    username: admin
-    password: 5678
-```
