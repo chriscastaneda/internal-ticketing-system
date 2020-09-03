@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 import EmployeeNavbarComponent from './components/pages/employee/navbar/employee-navbar.component';
 import AdminNavbarComponent from './components/pages/admin/navbar/admin-navbar.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
@@ -18,7 +18,7 @@ function App() {
   
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
           {/*<p>User Role: { isEmployee ? 'Employee' : 'OTHER' }</p>  Test for auth token Validation */} 
           <main>
@@ -54,7 +54,7 @@ function App() {
             </Suspense>
           </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
