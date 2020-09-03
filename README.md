@@ -40,7 +40,7 @@ Mock application of an internal-ticketing-system built to support a community of
 
 <div id="anchor">
 
-####  Default accounts
+####  Default accounts:
 
 </div> 
 
