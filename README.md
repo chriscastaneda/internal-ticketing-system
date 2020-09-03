@@ -34,7 +34,7 @@ demo: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
 - [x] Jest/Enzyme
 - [x] Git SCM (on GitHub)
 
-## User login instructions
+## Login instructions
 1. Refer to video above for website features. 
 2. Enter any default account options below to sign in to live demo.
 
