@@ -28,11 +28,11 @@ function App() {
               <LoginComponent />
             </Route>
 
-            <Route path="/redirect">
+            {/* <Route path="/redirect">
               { isEmployee ? (<Redirect to="/employee"/>) : 
                 (isAdmin ? (<Redirect to="/administrator"/>) : <Redirect to="/"/> )
               }
-              </Route>
+              </Route> */}
             
             
                 {/* <div className='p'>  */}

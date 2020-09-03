@@ -77,6 +77,16 @@ export const LoginComponent:React.FC = ()=>{
         const response = await accountRemote.createUser(payload); //SEnd POST
         setLoginUsertName(''); //clear fields
         setLoginPassword('');
+
+        
+        if (localStorage.getItem('userRole') === 'Admin') {
+          history.push('/employee');
+        }else if(localStorage.getItem('userRole') === 'Employee'){
+          history.push('/administrator');
+        }else{
+          history.push('/'); //route path to app.ts
+        }
+    
     };
 
 
