@@ -61,7 +61,13 @@ export const LoginComponent:React.FC = ()=>{
     localStorage.setItem('userImage', response.data.userImage);
     localStorage.setItem('accessToken', response.data.jwt);
 
-    history.push('/redirect'); //route path to app.ts
+    if (localStorage.getItem('userRole') === 'Admin') {
+      history.push('/employee');
+    }else if(localStorage.getItem('userRole') === 'Employee'){
+      history.push('/administrator');
+    }else{
+      history.push('/'); //route path to app.ts
+    }
   }
 
     /**Register User */
@@ -74,19 +80,11 @@ export const LoginComponent:React.FC = ()=>{
             userPassword: inputRegisterPassword
         };
 
+        alert('Website is down for maintenance at this time.');//?Maintenance Patch
+
         const response = await accountRemote.createUser(payload); //SEnd POST
         setLoginUsertName(''); //clear fields
         setLoginPassword('');
-
-        
-        if (localStorage.getItem('userRole') === 'Admin') {
-          history.push('/employee');
-        }else if(localStorage.getItem('userRole') === 'Employee'){
-          history.push('/administrator');
-        }else{
-          history.push('/'); //route path to app.ts
-        }
-    
     };
 
 
@@ -97,11 +95,22 @@ export const LoginComponent:React.FC = ()=>{
             userPassword: inputLoginPassword
         };
 
+        if( inputLoginUsertName  == '' || inputLoginPassword == ''){
+          alert('Please fill in required username & password');
+        }else{
+          setLoginUsertName(''); //?Maintenance Patch
+          setLoginPassword('');
+          alert('Website is down for maintenance at this time.'); 
+        }
+        
+
         try {
           response = await accountRemote.createToken(payload); //SEnd POST
           await setInformation();
         } catch {
-          alert('Invalid username or password');
+          console.log('Server not active at this time.'); //?Maintenance Patch
+
+          // alert('Invalid username or password');
         }
         
         // loadCredentails();
@@ -178,7 +187,7 @@ export const LoginComponent:React.FC = ()=>{
               </section>
 
               <section>
-                <footer className="footer font-white">Please advise the website will be down temporarily for maintenance. Please check back in at a later time. thank you! </footer>
+                <footer className="footer font-white">Please advise the website will be down temporarily for maintenance. Please check back in at a later time. Thank you! </footer>
             
               </section> 
             </div>
