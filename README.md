@@ -8,6 +8,8 @@ Mock application of an internal-ticketing-system built to support a community of
 - Agile scrum practices
 
 **Live Demo**: http://s3-internal-ticketing-system.s3.us-west-1.amazonaws.com/index.html
+
+**Project Preview**
 [![Demo](https://github.com/chriscastaneda/rev-p2-internal-ticketing-system/blob/master/assests/img/demo_snip.PNG)](https://drive.google.com/file/d/10OXxnCC41nw44Z3nhHYRkfyc8cxjXH23/view)
 
 ## Features
