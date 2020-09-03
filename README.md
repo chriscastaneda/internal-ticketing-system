@@ -36,7 +36,7 @@ Mock application of an internal-ticketing-system built to support a community of
 
 ## Login instructions
 1. Refer to video above for website features. 
-2. Enter any default account options below to sign in to live demo.
+2. Enter any default account options below to sign-in to live demo.
 
 <div id="anchor">
 
