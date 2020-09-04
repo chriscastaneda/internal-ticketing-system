@@ -64,5 +64,5 @@ Mock application of an internal-ticketing-system built to support a community of
 
 ### Client - React JS
 - install node 6.14.4 or higher
-- _client/_ npm install
+- _CD client/_ npm install
 - npm start
