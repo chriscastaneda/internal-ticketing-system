@@ -1,5 +1,5 @@
 # team-2-project
-Post/Ticket support forum
+Post/Ticket support forum.
 
 the server only looks at hash and salt when trying to log in a user, once the password has been used to
 create the hash+salt, it is stored in the database and never looked at by the server again
